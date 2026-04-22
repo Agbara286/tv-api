@@ -4,6 +4,7 @@ import (
 	"state-tv-api/config"
 	"state-tv-api/controllers"
 	"state-tv-api/models"
+	"time"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -21,7 +22,7 @@ func main() {
 
 	// 4. Setup CORS
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     true,
+		AllowAllOrigins:  true,
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
